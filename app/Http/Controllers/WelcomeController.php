@@ -1,0 +1,82 @@
+<?php
+
+namespace App\Http\Controllers;
+use App\User;
+use App\City;
+use App\Http\Requests\UserCreateRequest;
+use App\Gestion\PhotoGestion;
+use App\Repositories\UserRepository;
+use App\Http\Requests\WelcomeFormRequest;
+
+class WelcomeController extends Controller{
+	
+	protected $userRepository;
+	protected $nbrPerPage = 4;
+	
+	public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+	
+	public function index(){
+		
+		return view('index');
+	}
+	
+	public function creerCompte()
+    {
+		$cities = City::all();
+		
+		
+        return view ('creer_compte',  compact('cities'));
+    }
+	
+	public function enregistrerCompte(UserCreateRequest $request, PhotoGestion $photoGestion)
+    {
+	
+		
+		if($photoGestion->save($request->file('shopPicture')))
+		{
+			$input = $request->all();
+			$input['shopPicture'] = $photoGestion->getPictureLink();
+		  
+		
+				/*return 'Le formulaire est bien rempli avec : 
+						nom = '.$input->input('name').'
+						email = '.$input->input('email').'
+						shopPicture = '.$input['shopPicture'].'
+						photo = '.$photoGestion->getPictureLink().'
+						tel = '.$input->input('phone'); */
+			
+			$user = $this->userRepository->store($input);
+			$user['shopPicture'] = $photoGestion->getPictureLink();
+			return redirect('auth/login')->withOk("L'utilisateur " . $user->name . " a été créé.");
+			
+			
+		}
+		
+		
+        /*$user = $this->userRepository->store($request->all());
+		return redirect('user')->withOk("L'utilisateur " . $user->name . " a été créé.");*/
+    }
+	
+	public function indexPostForm(WelcomeFormRequest $request){
+		return 'Welcome Form bien rempli avec : Item = '.$request->input('city').' et ville = '.$request->input('city'); 
+	}
+	
+	public function boutiques(){
+		
+		$boutiques = $this->userRepository->getPaginate($this->nbrPerPage);
+		$links = str_replace('/?', '?', $boutiques->render());
+		
+		//$boutiques = User::all();
+		return view('boutiques', compact('boutiques', 'links'));
+	}
+	
+	public function showBoutique($id)
+    {
+        $user = $this->userRepository->getById($id);
+		
+		return view('boutique',  compact('user'));
+    }
+}

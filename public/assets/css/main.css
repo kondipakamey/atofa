@@ -1,0 +1,206 @@
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+#footer-gestion {position: absolute; bottom: 0; left: 0; right: 0}
+
+#manager-ajust{
+
+	margin-top: 30px;
+}
+
+body{
+
+	
+ 
+
+	padding-top:45px;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+
+#header-welcome{
+	height:310px;
+	
+}
+
+[class*="row"] { 
+	margin-bottom:10px;
+}
+
+.jumbotron{
+	padding-left:20px;
+	margin-left:20px;
+}
+
+
+#offre-demande-visite{
+	height:200px;
+}
+
+.trait-horizontal{
+	border-bottom:1px solid #1C4D7C;
+}
+
+.trait-vertical{
+	border-right:1px solid #1C4D7C;
+	padding-right:10px;
+
+}
+
+#offre-demande-visite a{
+	text-decoration:none;
+	color:#fff;
+}
+
+.cercle{
+	
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+	background-color: #1C4D7C;
+	text-align: center;
+	font-size: 20px;
+	font-weight:bold;
+	padding-top: 60px;
+	float: left;
+	margin-left: 40px;
+}
+
+ #dernieres-annonces img{
+	width:231px;
+	height:180px;
+	padding-bottom:5px;
+	border-bottom:1px solid #1C4D7C;
+}
+
+#carousel-example-generic{
+	padding-top:10px;
+	background-color: #ccc;
+}
+
+
+/*** page offres et demandes ***/
+
+#link-ajusted{
+	padding-top:40px;
+}
+
+#annonces img{
+	width:231px;
+	height:150px;
+	padding-bottom:5px;
+	border:1px solid #1C4D7C;
+}
+
+#annonce-info{
+	color:#fff;
+	padding-right:2px;
+	height:154px;
+}
+
+.container-ajusted{
+	margin-bottom:20px;
+}
+
+#pubs img{
+	width:100%;
+	height:100%;
+	padding-bottom:5px;
+	border:1px solid #1C4D7C;
+}
+
+#boutiques img{
+	width:250px;
+	height:200px;
+	padding-bottom:5px;
+	border:1px solid #1C4D7C;
+}
+
+#boutiques-button{
+	margin-top:20px;
+	margin-right:5px;
+}
+
+#boutique-info{
+	color:#1C4D7C;
+	padding-right:10px;
+	height:180px;
+}
+
+/*** FIN page offres et demandes ***/
+
+
+/***  page connexion ***/
+
+.form-connexion{
+	padding-top:20px;
+}
+
+.text-connexion{
+	padding-left:20px;
+}
+
+/*** FIN page connexion ***/
+
+/*** DEBUT page boutique ***/
+
+.boutique-img{
+	width:100%;
+	height:100%;
+	padding-bottom:5px;
+	border:1px solid #1C4D7C;
+}
+
+/*** FIN page boutique ***/
+
+footer{
+	padding-top:10px;
+	background-color: #1C4D7C;
+}
+
+footer ul li
+{
+	font-size:16px;
+	padding-top:5px;
+	list-style:none;
+	width:210px;
+	border-bottom: 2px solid #1C4D7C;
+	
+}
+
+footer ul li a
+{
+	font-size:16px;
+	list-style:none;
+	text-decoration:none;
+}
+
+#copy{
+	height:40px;
+	background:#fff;
+	padding-top:10px;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
+
+/* Petit Ecran : Debut Media Queries */
+@media only screen and (max-width:800px) {
+ #header-welcome{
+		height:735px;
+	}
+	
+	.cercle{
+		margin-bottom:15px;
+		margin-left:60px;
+	}
+	
+	footer ul li{
+		width:170px;
+	}
+}
