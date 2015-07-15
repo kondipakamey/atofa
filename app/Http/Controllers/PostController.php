@@ -40,6 +40,13 @@ class PostController extends Controller
 		$categories = Category::all();
 		return view('posts.add', compact('cities', 'categories'));
 	}
+	
+	public function show($id)
+    {
+        $post = $this->postRepository->getById($id);
+		
+		return view('posts.show', compact('post'));
+    }
 
 	public function store(PostRequest $request, PhotoGestion $photoGestion)
 	{

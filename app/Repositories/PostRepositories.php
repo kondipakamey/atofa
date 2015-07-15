@@ -21,6 +21,8 @@ class PostRepository
 		->paginate($n);
 	}
 
+	
+	
 	public function store($inputs)
 	{
 		$this->post->create($inputs);

@@ -21,6 +21,16 @@ class PostRepository
 		->paginate($n);
 	}
 
+	public function getById($id)
+    {
+        return $this->post->findOrFail($id);
+    }
+
+    public function update($id, Array $inputs)
+    {
+        $this->getById($id)->fill($inputs)->save();
+    }
+	
 	public function store($inputs)
 	{
 		$this->post->create($inputs);
