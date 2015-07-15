@@ -49,7 +49,7 @@ class PostController extends Controller
 		{
 			$input = $request->all();
 			$input['photo'] = $photoGestion->getPictureLink();
-			
+			$input['prix'] = $input['prix'].'$';
 			$inputs = array_merge($input, ['user_id' => $request->user()->id]);
 			
 		
