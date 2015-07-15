@@ -9,7 +9,9 @@
 		<div class="row container">
 			<div class="col-md-7">
 				<img src="{{ asset(config('images.path').'/'.$user->shopPicture) }}" alt="..." class="img-thumbnail boutique-img">
-				{{ link_to_route('/', 'Voir les annonces de cette boutique', [$user->posts], ['class' => 'btn btn-success btn-block']) }}</p>
+				<a href="{{ url('user-posts')}}/{{$user->id}}" class="btn btn-success btn-block btn-lg">
+					<strong class="text-uppercase">consulter ses annonces</strong>
+				</a>
 			</div>
 			<div class="col-md-5">
 				<div class="panel panel-primary">	

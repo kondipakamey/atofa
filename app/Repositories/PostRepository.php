@@ -20,6 +20,14 @@ class PostRepository
 		->orderBy('posts.created_at', 'desc')
 		->paginate($n);
 	}
+	
+	
+	public function paginateThis($posts, $n)
+	{
+		return $posts->with('user')
+		->orderBy('posts.created_at', 'desc')
+		->paginate($n);
+	}
 
 	public function getById($id)
     {

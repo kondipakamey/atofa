@@ -6,7 +6,9 @@ use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Gestion\PhotoGestion;
 use App\Repositories\UserRepository;
+use App\Repositories\PostRepository;
 use App\City;
+use App\Post;
 use Illuminate\Http\Request;
 
 
@@ -35,7 +37,17 @@ class UserController extends Controller
 		$links = str_replace('/?', '?', $users->render());
 		return view('manager.users.index', compact('users', 'links'));
     }
-
+	
+	public function showUserPosts($user_id)
+	{
+		
+		$user = $this->userRepository->getById($user_id);
+		//$posts = $user->posts;
+		//$links = str_replace('/?', '?', $users->render());
+		$posts = Post::where('user_id', '=', $user_id)->paginate($this->nbrPerPage);
+		$links = str_replace('/?', '?', $posts->render());
+		return view('manager.users.userPostList', compact('posts', 'user', 'links'));
+	}
     /**
      * Show the form for creating a new resource.
      *

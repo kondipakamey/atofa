@@ -76,11 +76,7 @@ class WelcomeController extends Controller{
 		return view('boutiques', compact('boutiques', 'links'));
 	}
 	
-	public function toto()
-	{
-		//var_dump($posts);
-		return ("It Works");
-	}
+	
 	
 	public function offres(){
 		

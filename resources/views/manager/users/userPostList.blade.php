@@ -4,18 +4,18 @@
     @if(isset($info))
 		<div class="row alert alert-info">{{ $info }}</div>
 	@endif
-	{!! $links !!}
+	
 	<!--php
 	$user_id = Auth::user()->id;
 
 	$posts = App\User::find($user_id)->posts;
 	-->
 	<div class="well">
-		<h1 class="text-center">Binvenue sur la page de gestion des annonces</h1>
+		<h1 class="text-center">Liste des annonces de la boutique <strong class="text-primary text-uppercase">{{ $user->shopName }}</strong></h1>
 	</div>
-	
+	{!! $links !!}
 	@foreach($posts as $post)
-		@if($post->user_id == $user->id)
+		
 		<article class="row bg-primary">
 			<div class="col-md-3" id="margin-top-bottom-10">
 				<img src="{{ asset(config('images.path').'/'.$post->photo) }}" alt="..." class="img-thumbnail">
@@ -23,16 +23,10 @@
 			<div class="col-md-7">
 				<header>
 					<h1>{{ $post->titre }}</h1>
-					
 				</header>
 				<hr>
 				<section>
 					<p>{{ $post->description }}</p>
-					@if(Auth::check() and Auth::user()->admin)
-						{!! Form::open(['method' => 'DELETE', 'route' => ['post.destroy', $post->id]]) !!}
-							{!! Form::submit('Supprimer cet article', ['class' => 'btn btn-danger btn-xs ', 'onclick' => 'return confirm(\'Vraiment supprimer cet article ?\')']) !!}
-						{!! Form::close() !!}
-					@endif
 					<em class="pull-right">
 						<span class="glyphicon glyphicon-pencil"></span> {{ $post->user->name }} le {!! $post->created_at->format('d-m-Y') !!}
 					</em>
@@ -40,7 +34,7 @@
 			</div>
 			<div class="col-md-2" id="margin-top-bottom-10">
 				<p>{!! link_to_route('post.show', 'Voir', [$post->id], ['class' => 'btn btn-success btn-block']) !!}</p>
-				<p>{!! link_to_route('post.edit', 'Modifier', [$post->id], ['class' => 'btn btn-warning btn-block']) !!}</p>
+				
 				<p>
 					{!! Form::open(['method' => 'DELETE', 'route' => ['post.destroy', $post->id]]) !!}
 						{!! Form::submit('Supprimer cet article', ['class' => 'btn btn-danger btn-block ', 'onclick' => 'return confirm(\'Vraiment supprimer cet article ?\')']) !!}
@@ -49,7 +43,7 @@
 			</div>
 		</article>
 		<br>
-		@endif
+	
 	@endforeach
-	{!! $links !!}
+	<p class="text-center">{!! $links !!}</p>
 @stop

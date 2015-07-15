@@ -19,7 +19,7 @@ Route::get('offres', 'WelcomeController@offres');
 Route::get('demandes', 'WelcomeController@demandes');
 Route::get('annonce/{n}', 'WelcomeController@showAnnonce');
 
-Route::any('user_posts', 'WelcomeController@toto');
+Route::get('user-posts/{n}', 'UserController@showUserPosts');
 
 
 Route::get('creer_compte', 'WelcomeController@creerCompte');
