@@ -24,6 +24,8 @@ Route::post('/indexPostValidation', 'WelcomeController@indexPostForm');
 
 Route::resource('user','UserController');
 
+Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
+
 
 
 Route::get('home', '\Bestmomo\Scafold\Http\Controllers\HomeController@index');
