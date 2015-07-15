@@ -14,10 +14,12 @@ class UserController extends Controller
 {
 	
 	protected $userRepository;
-	protected $nbrPerPage = 1;
+	protected $nbrPerPage = 4;
 	
 	public function __construct(UserRepository $userRepository)
     {
+		$this->middleware('auth');
+		$this->middleware('admin', ['only' => 'destroy']);
         $this->userRepository = $userRepository;
     }
 	
@@ -93,6 +95,10 @@ class UserController extends Controller
 		$city = City::find($user->city_id);
 		return view('manager.users.show',  compact('user', 'city'));
     }
+	
+	
+	
+	
 
     /**
      * Show the form for editing the specified resource.
@@ -141,6 +147,8 @@ class UserController extends Controller
 		return redirect('user')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
     }
 
+	
+	
     /**
      * Remove the specified resource from storage.
      *

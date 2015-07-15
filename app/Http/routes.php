@@ -14,6 +14,14 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('boutiques', 'WelcomeController@boutiques');
 Route::get('boutique/{n}', 'WelcomeController@showBoutique');
+
+Route::get('offres', 'WelcomeController@offres');
+Route::get('demandes', 'WelcomeController@demandes');
+Route::get('annonce/{n}', 'WelcomeController@showAnnonce');
+
+Route::any('user_posts', 'WelcomeController@toto');
+
+
 Route::get('creer_compte', 'WelcomeController@creerCompte');
 Route::post('enregistrer_compte', 'WelcomeController@enregistrerCompte');
 
@@ -21,6 +29,7 @@ Route::post('enregistrer_compte', 'WelcomeController@enregistrerCompte');
 Route::get('depot-annonce', 'DepotAnnonceController@getForm');
 Route::post('depot-annonce', 'DepotAnnonceController@postForm');
 Route::post('/indexPostValidation', 'WelcomeController@indexPostForm');
+
 
 Route::resource('user','UserController');
 

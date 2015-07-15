@@ -1,4 +1,44 @@
-@extends('gestionTemplate')
+@extends('template')
+
+@section('titre')
+	Atofa | Offre
+@stop
+
+
+@section('bas_menu')
+<div class="row well">
+			<div class="col-md-8 col-md-offset-2">
+				<form class="form-inline">
+					<div class="form-group">
+						<input type="text" class="form-control" id="titre_annonce" placeholder="Titre de l'annonce">
+					</div>
+					<select class="form-control" id="choix_categorie">
+						<option>Toutes les categories</option>
+						<option>Electronique</option>
+						<option>Cuisine</option>
+						<option>article scolaires</option>
+					</select>
+					<select class="form-control" id="choix_province">
+						<option>Toutes les provinces</option>
+						<option>Manitoba</option>
+						<option>Quebec</option>
+						<option>Oontario</option>
+					</select>	
+					<select class="form-control" id="choix_ville">
+						<option>Toutes les villes</option>
+						<option>Maontreal</option>
+						<option>Sherbrooke</option>
+						<option>Quebec</option>
+						<option>Trois riviere</option>
+						<option>Ottawa</option>
+					</select>					
+					<button type="submit" class="btn btn-success text-uppercase">Rechercher</button>
+				</form>
+			</div>
+		</div>
+@stop
+
+
 
 @section('contenu')
 	<div class="container container-ajusted well">

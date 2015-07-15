@@ -15,7 +15,7 @@
 	</div>
 	
 	@foreach($posts as $post)
-		@if($post->user_id == Auth::user()->id)
+		@if($post->user_id == $user->id)
 		<article class="row bg-primary">
 			<div class="col-md-3" id="margin-top-bottom-10">
 				<img src="{{ asset(config('images.path').'/'.$post->photo) }}" alt="..." class="img-thumbnail">

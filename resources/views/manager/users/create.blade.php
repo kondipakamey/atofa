@@ -1,4 +1,4 @@
-@extends('indexTemplate')
+@extends('gestionTemplate')
 
 @section('contenu')
 

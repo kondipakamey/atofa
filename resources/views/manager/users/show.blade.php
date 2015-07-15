@@ -1,4 +1,4 @@
-@extends('indexTemplate')
+@extends('gestionTemplate')
 
 @section('contenu')
 	<div class="container container-ajusted well">
@@ -9,6 +9,7 @@
 		<div class="row container">
 			<div class="col-md-7">
 				<img src="{{ asset(config('images.path').'/'.$user->shopPicture) }}" alt="..." class="img-thumbnail boutique-img">
+				{{ link_to_route('/', 'Voir les annonces de cette boutique', [$user->posts], ['class' => 'btn btn-success btn-block']) }}</p>
 			</div>
 			<div class="col-md-5">
 				<div class="panel panel-primary">	
@@ -21,8 +22,6 @@
 						@if($user->admin == 1)
 							<h4>Administrateur</h4>
 						@endif
-						
-						
 					</div>
 				</div>	
 				

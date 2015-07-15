@@ -1,4 +1,4 @@
-@extends('indexTemplate')
+@extends('gestionTemplate')
 
 @section('contenu')
 <div class="container container-ajusted well">	

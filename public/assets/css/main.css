@@ -165,6 +165,14 @@ body{
 	border:1px solid #1C4D7C;
 }
 
+.annonce-img{
+	width:600px;
+	height:400px;
+	margin-left:20px;
+	margin-bottom:20px;
+	border:2px solid #ffffff;
+}
+
 /*** FIN page boutique ***/
 
 footer{

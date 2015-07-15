@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Gestion\PhotoGestion;
 use App\Repositories\PostRepository;
 use App\Http\Requests\PostRequest;
@@ -30,9 +30,24 @@ class PostController extends Controller
 		
 		$posts = $this->postRepository->getPaginate($this->nbrPerPage);
 		$links = str_replace('/?', '?', $posts->render());
-
+		
+		//$user = Auth::user();
+		//var_dump($user);
+		if(Auth::check() and Auth::user()->admin){
+			return redirect(route('user.index'));
+		}
+		
+		
 		return view('posts.liste', compact('posts', 'links'));
 	}
+	
+	public function showPostList($user)
+    {
+		
+		$posts = $this->postRepository->getPaginate($this->nbrPerPage);
+		$links = str_replace('/?', '?', $posts->render());
+		return view('posts.userPostsList',  compact('posts', 'user'));
+    }
 
 	public function create()
 	{
@@ -47,6 +62,33 @@ class PostController extends Controller
 		
 		return view('posts.show', compact('post'));
     }
+	
+	public function edit($id)
+    {
+		$cities = City::all();
+		$categories = Category::all();
+		
+        $post = $this->postRepository->getById($id);
+		
+		
+		
+		return view('posts.edit',  compact('post', 'cities', 'categories'));
+    }
+	
+	
+	public function update(PostRequest $request, $id, PhotoGestion $photoGestion)
+    {
+		
+		if($photoGestion->save($request->file('photo')))
+		{
+			$post = $request->all();
+			$post['photo'] = $photoGestion->getPictureLink();
+			$this->postRepository->update($id, $post);	
+		}
+		
+		return redirect('post')->withOk("L'annonce " . $request->input('titre') . " a été modifié.");
+    }
+	
 
 	public function store(PostRequest $request, PhotoGestion $photoGestion)
 	{
@@ -56,7 +98,7 @@ class PostController extends Controller
 		{
 			$input = $request->all();
 			$input['photo'] = $photoGestion->getPictureLink();
-			$input['prix'] = $input['prix'].'$';
+
 			$inputs = array_merge($input, ['user_id' => $request->user()->id]);
 			
 		

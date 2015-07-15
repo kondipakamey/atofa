@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Mon joli site</title>
+		<title>Atofa | Dashboard</title>
 		<link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 	
 		{!! Html::style('https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') !!}
@@ -32,28 +32,29 @@
 								{!!link_to('/', 'atofa', ['class' => 'navbar-brand text-uppercase']) !!}
 								
 							</div><!-- Navbar Header -->
-							<div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
-								<ul class="nav navbar-nav" id="margin-right-20">
-									<li>{!!link_to('post', 'Mes Articles', ['class' => 'text-uppercase']) !!}</li>
-									
-									
-									
-								</ul>
-								<div class="dropdown navbar-btn navbar-right" id="margin-left-20">
-								  <button class="btn btn-successu dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<div class="dropdown navbar-btn navbar-right" id="margin-left-20">
+								<button class="btn btn-successu dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 									{{ Auth::user()->name }}
 									<span class="caret"></span>
-								  </button>
-								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 									<li><a href="{{ url('/auth/logout') }}">Deconnexion</a></li>
-									
-								  </ul>
-								</div>
-								<a href="{{ url('post/create') }}" class="btn btn-primary navbar-btn navbar-right" >Creer article</a>
-								
+								</ul>
+							</div>
+							<div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+								@if(Auth::user()->admin)
+									<ul class="nav navbar-nav" id="margin-right-20">
+										<li>{!!link_to('user', 'Les Utilisateurs', ['class' => 'text-uppercase']) !!}</li>
+									</ul>
+									<a href="{{ url('user/create') }}" class="btn btn-primary navbar-btn navbar-right" >Creer utilisateur</a>
+								@else
+									<ul class="nav navbar-nav" id="margin-right-20">
+										<li>{!!link_to('post', 'Mes Articles', ['class' => 'text-uppercase']) !!}</li>
+									</ul>
+									<a href="{{ url('post/create') }}" class="btn btn-primary navbar-btn navbar-right" >Creer article</a>
+								@endif	
 
 							</div>
-						
 					</div><!-- End Container -->
 				</nav><!-- End Navbar -->
 			

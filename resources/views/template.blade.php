@@ -60,7 +60,8 @@
 						<ul class="nav -pills nav-justified">
 							<li><a href="{{ url('/') }}" class="text-uppercase">acceuil</a></li>
 							<li><a href="depot_annonce.html" class="text-uppercase">depot annonce</a></li>
-							<li><a href="offre.html" class="text-uppercase">offres</a></li>
+							<li>{!!link_to('offres', 'offres', ['class' => 'text-uppercase']) !!}</li>
+							
 							<li><a href="demande.html" class="text-uppercase">demandes</a></li>
 							<li>{!!link_to('boutiques', 'boutique', ['class' => 'text-uppercase']) !!}</li>
 							@if(Auth::guest())

@@ -6,16 +6,19 @@ use App\City;
 use App\Http\Requests\UserCreateRequest;
 use App\Gestion\PhotoGestion;
 use App\Repositories\UserRepository;
+use App\Repositories\PostRepository;
 use App\Http\Requests\WelcomeFormRequest;
 
 class WelcomeController extends Controller{
 	
 	protected $userRepository;
+	protected $postRepository;
 	protected $nbrPerPage = 4;
 	
-	public function __construct(UserRepository $userRepository)
+	public function __construct(UserRepository $userRepository, PostRepository $postRepository)
     {
         $this->userRepository = $userRepository;
+		$this->postRepository = $postRepository;
     }
 	
 	public function index(){
@@ -73,10 +76,32 @@ class WelcomeController extends Controller{
 		return view('boutiques', compact('boutiques', 'links'));
 	}
 	
+	public function toto()
+	{
+		//var_dump($posts);
+		return ("It Works");
+	}
+	
+	public function offres(){
+		
+		$offres = $this->postRepository->getPaginate($this->nbrPerPage);
+		$links = str_replace('/?', '?', $offres->render());
+		
+		//$boutiques = User::all();
+		return view('offres', compact('offres', 'links'));
+	}
+	
 	public function showBoutique($id)
     {
         $user = $this->userRepository->getById($id);
 		
 		return view('boutique',  compact('user'));
+    }
+	
+	public function showAnnonce($id)
+    {
+        $post = $this->postRepository->getById($id);
+		
+		return view('offre',  compact('post'));
     }
 }

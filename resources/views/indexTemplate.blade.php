@@ -38,7 +38,7 @@
 								<ul class="nav navbar-nav">
 									<li>{!!link_to('depot-annonce', 'vendre', ['class' => 'text-uppercase']) !!}</li>
 									
-									<li><a href="offre.html" class="text-uppercase">acheter</a></li>
+									<li>{!!link_to('offres', 'acheter', ['class' => 'text-uppercase']) !!}</li>
 									<li>{!!link_to('boutiques', 'boutique', ['class' => 'text-uppercase']) !!}</li>
 									
 								</ul>
