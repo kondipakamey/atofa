@@ -59,15 +59,17 @@
 						<div class="collapse navbar-collapse" id="link-ajusted">
 						<ul class="nav -pills nav-justified">
 							<li><a href="{{ url('/') }}" class="text-uppercase">acceuil</a></li>
-							<li><a href="depot_annonce.html" class="text-uppercase">depot annonce</a></li>
+							<li><a href="{{ url('/post') }}" class="text-uppercase">Depot annonce</a></li>
 							<li>{!!link_to('offres', 'offres', ['class' => 'text-uppercase']) !!}</li>
 							
-							<li><a href="demande.html" class="text-uppercase">demandes</a></li>
-							<li>{!!link_to('boutiques', 'boutique', ['class' => 'text-uppercase']) !!}</li>
+							<li>{!!link_to('demandes', 'demandes', ['class' => 'text-uppercase']) !!}</li>
+							<li>{!!link_to('boutiques', 'boutiques', ['class' => 'text-uppercase']) !!}</li>
+							
 							@if(Auth::guest())
 								<li><a href="{{ url('/auth/login') }}" class="text-uppercase text-warning bg-primary"><strong>Connexion</strong></a></li>
 								<li><a href="{{ url('creer_compte') }}" class="text-uppercase text-primary bg-success"><strong>Creer compte</strong></a></li>
 							@else
+								<li><a href="{{ url('/post') }}" class="text-uppercase text-warning bg-primary"><strong>Mon Portail</strong></a></li>
 								<li><a href="{{ url('/auth/logout') }}" class="text-uppercase text-danger bg-danger"><strong>Se Deconnecter</strong></a></li>
 							@endif
 						</ul>
@@ -107,10 +109,10 @@
 							</div>
 							<div class="panel-body">
 								<ul>
-									<li><a href="#">Acceuil</a></li>
-									<li><a href="#">Acheter</a></li>
-									<li><a href="#">Vendre</a></li>
-									<li><a href="#">Boutique</a></li>
+									<li><a href="{{ url('/') }}">Acceuil</a></li>
+									<li><a href="{{ url('/offres') }}">Acheter</a></li>
+									<li><a href="{{ url('/demandes') }}">Vendre</a></li>
+									<li><a href="{{ url('/boutiques') }}">Boutique</a></li>
 								</ul>
 							</div>
 						</div>

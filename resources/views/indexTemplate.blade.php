@@ -36,10 +36,11 @@
 							</div><!-- Navbar Header -->
 							<div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
 								<ul class="nav navbar-nav">
-									<li>{!!link_to('depot-annonce', 'vendre', ['class' => 'text-uppercase']) !!}</li>
-									
+								
+									<li><a href="{{ url('/post') }}" class="text-uppercase">vendre</a></li>
 									<li>{!!link_to('offres', 'acheter', ['class' => 'text-uppercase']) !!}</li>
-									<li>{!!link_to('boutiques', 'boutique', ['class' => 'text-uppercase']) !!}</li>
+									<li>{!!link_to('demandes', 'demandes', ['class' => 'text-uppercase']) !!}</li>
+									<li>{!!link_to('boutiques', 'boutiques', ['class' => 'text-uppercase']) !!}</li>
 									
 								</ul>
 								
@@ -56,10 +57,12 @@
 										<span class="caret"></span>
 									  </button>
 									  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										<li><a href="{{ url('/profil') }}">Mon Profil</a></li>
 										<li><a href="{{ url('/auth/logout') }}">Deconnexion</a></li>
 										
 									  </ul>
 									</div>
+									<a href="{{ url('/post') }}" class="btn btn-primary navbar-btn navbar-right"><strong>Mon Portail</strong></a>
 								@endif
 							</div>
 						
@@ -99,10 +102,10 @@
 							</div>
 							<div class="panel-body">
 								<ul>
-									<li><a href="#">Acceuil</a></li>
-									<li><a href="#">Acheter</a></li>
-									<li><a href="#">Vendre</a></li>
-									<li><a href="#">Boutique</a></li>
+									<li><a href="{{ url('/') }}">Acceuil</a></li>
+									<li><a href="{{ url('/offres') }}">Acheter</a></li>
+									<li><a href="{{ url('/demandes') }}">Vendre</a></li>
+									<li><a href="{{ url('/boutiques') }}">Boutique</a></li>
 								</ul>
 							</div>
 						</div>

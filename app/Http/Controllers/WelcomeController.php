@@ -87,6 +87,15 @@ class WelcomeController extends Controller{
 		return view('offres', compact('offres', 'links'));
 	}
 	
+	public function demandes(){
+		
+		$demandes = $this->postRepository->getPaginate($this->nbrPerPage);
+		$links = str_replace('/?', '?', $demandes->render());
+		
+		//$boutiques = User::all();
+		return view('demandes', compact('demandes', 'links'));
+	}
+	
 	public function showBoutique($id)
     {
         $user = $this->userRepository->getById($id);
@@ -98,6 +107,6 @@ class WelcomeController extends Controller{
     {
         $post = $this->postRepository->getById($id);
 		
-		return view('offre',  compact('post'));
+		return view('annonce',  compact('post'));
     }
 }

@@ -11,11 +11,11 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="row">
-							<div class="btn-group btn-group-justified" role="group" aria-label="...">
+							<a href="{{ url('/post') }}"><div class="btn-group btn-group-justified" role="group" aria-label="...">
 								<div class="btn-group">
 									<button type="button" class="btn btn-warning btn-lg text-uppercase"><strong>Deposer une annonce</strong></button>
 								</div>
-							</div>
+							</div></a>
 						</div>
 						<div class="row">
 							<div class="panel panel-info" id="panel-recherche">
@@ -79,13 +79,13 @@
 				</div>
 				<div class="row" id="offre-demande-visite">					
 					<div class="col-sm-4">
-						<a href="offre.html" class="cercle bg-primary"> OFFRES </a>
+						<a href="{{ url('/offres') }}" class="cercle bg-primary"> OFFRES </a>
 					</div>
 					<div class="col-sm-4 ">
-						<a href="demande.html" class="cercle bg-primary"> DEMANDES </a>
+						<a href="{{ url('/demandes') }}" class="cercle bg-primary"> DEMANDES </a>
 					</div>
 					<div class="col-sm-4">
-						<a href="boutique.html" class="cercle bg-primary"> BOUTIQUES </a>
+						<a href="{{ url('/boutiques') }}" class="cercle bg-primary"> BOUTIQUES </a>
 					</div>
 				</div>
 			</div>

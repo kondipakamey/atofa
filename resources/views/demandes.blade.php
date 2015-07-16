@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-	Atofa | Offres
+	Atofa | Demandes
 @stop
 
 @section('bas_menu')
@@ -44,24 +44,24 @@
 		<div class="row">
 		
 			<div class="col-md-9" id="annonces">
-				@foreach($offres as $offre)
-					@if($offre->type == "Offre")
+				@foreach($demandes as $demande)
+					@if($demande->type == "Demande")
 						<div class="list-group">
-							<a href="{{ url('/annonce/')}}/{{$offre->id}}" class="list-group-item">
+							<a href="{{ url('/annonce/')}}/{{$demande->id}}" class="list-group-item">
 								<div class="row">
 									<div class="col-md-4">
-										<img src="{{ asset(config('images.path').'/'.$offre->photo) }}" alt="..." class="img-thumbnail">
+										<img src="{{ asset(config('images.path').'/'.$demande->photo) }}" alt="..." class="img-thumbnail">
 									</div>
 									<div class="col-md-8 bg-primary" id="annonce-info">
-										<h4><strong>{{$offre->titre}} </strong>
+										<h4><strong>{{$demande->titre}} <strong>
 											<em class="pull-right">
-												<span class="glyphicon glyphicon-pencil"></span> {{ $offre->user->name }} le {!! $offre->created_at->format('d-m-Y') !!}
+												<span class="glyphicon glyphicon-pencil"></span> {{ $demande->user->name }} le {!! $demande->created_at->format('d-m-Y') !!}
 											</em>
 										</h4>
-										<p>Categorie : <strong>{{$offre->category->name}} </strong>/ Ville : <strong>{{$offre->city->city}} {{$offre->city->state}}</strong></p>
+										<p>Categorie : <strong>{{$demande->category->name}} </strong>/ Ville : <strong>{{$demande->city->city}} {{$demande->city->state}}</strong></p>
 										
-										<p>Etat : <strong>{{$offre->etat}}</strong></p>
-										<h3><strong>{{$offre->prix}}$</strong></h3>
+										<p>Etat : <strong>{{$demande->etat}}</strong></p>
+										<h3><strong>{{$demande->prix}}$</strong></h3>
 										
 										
 									</div>

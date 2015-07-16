@@ -38,6 +38,7 @@
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+									<li><a href="{{ url('/profil') }}">Mon Profil</a></li>
 									<li><a href="{{ url('/auth/logout') }}">Deconnexion</a></li>
 								</ul>
 							</div>
@@ -93,10 +94,10 @@
 							</div>
 							<div class="panel-body">
 								<ul>
-									<li><a href="#">Acceuil</a></li>
-									<li><a href="#">Acheter</a></li>
-									<li><a href="#">Vendre</a></li>
-									<li><a href="#">Boutique</a></li>
+									<li><a href="{{ url('/') }}">Acceuil</a></li>
+									<li><a href="{{ url('/offres') }}">Acheter</a></li>
+									<li><a href="{{ url('/demandes') }}">Vendre</a></li>
+									<li><a href="{{ url('/boutiques') }}">Boutique</a></li>
 								</ul>
 							</div>
 						</div>
