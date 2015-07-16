@@ -53,7 +53,7 @@
 										<img src="{{ asset(config('images.path').'/'.$demande->photo) }}" alt="..." class="img-thumbnail">
 									</div>
 									<div class="col-md-8 bg-primary" id="annonce-info">
-										<h4><strong>{{$demande->titre}} <strong>
+										<h4><strong>{{$demande->titre}} </strong>
 											<em class="pull-right">
 												<span class="glyphicon glyphicon-pencil"></span> {{ $demande->user->name }} le {!! $demande->created_at->format('d-m-Y') !!}
 											</em>
