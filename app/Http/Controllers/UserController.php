@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Input;
+use Auth;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Gestion\PhotoGestion;
@@ -109,6 +110,14 @@ class UserController extends Controller
     }
 	
 	
+	public function showProfil($id)
+    {
+        $user = $this->userRepository->getById($id);
+		
+		return view('manager.users.showProfil',  compact('user'));
+    }
+	
+	
 	
 	
 
@@ -127,6 +136,17 @@ class UserController extends Controller
 		$selected_city = City::find($user->city_id);
 		
 		return view('manager.users.edit',  compact('user', 'cities', 'selected_city'));
+    }
+	
+	public function editProfil($id)
+    {
+		$cities = City::all();
+		
+        $user = $this->userRepository->getById($id);
+		
+		$selected_city = City::find($user->city_id);
+		
+		return view('manager.users.editProfil',  compact('user', 'cities', 'selected_city'));
     }
 
     /**
@@ -156,7 +176,39 @@ class UserController extends Controller
 		
 		}
 		
-		return redirect('user')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
+		if(Auth::user()->admin){
+			return redirect('user')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
+		}
+		else{
+			return redirect('post')->withOk("Votre Profil" . $request->input('name') . " a été modifié.");
+		}
+		
+		
+		
+    }
+
+	public function updateProfil(UserUpdateRequest $request, $id, PhotoGestion $photoGestion)
+    {
+		
+		if($photoGestion->save($request->file('shopPicture')))
+		{
+			$input = $request->all();
+			$input['shopPicture'] = $photoGestion->getPictureLink();
+		  
+			
+			$this->setAdmin($request);
+			
+			$user = $request->all();
+			
+			//var_dump($user);
+			$user['shopPicture'] = $photoGestion->getPictureLink();
+			
+			//var_dump($user);
+			$this->userRepository->update($id, $user);	
+		
+		}
+		
+		return redirect('post')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
     }
 
 	

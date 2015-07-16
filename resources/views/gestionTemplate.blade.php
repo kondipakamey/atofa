@@ -38,7 +38,7 @@
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									<li><a href="{{ url('/profil') }}">Mon Profil</a></li>
+									<li><a href="{{ url('/user-profil')}}/{{Auth::user()->id}}">Mon Profil</a></li>
 									<li><a href="{{ url('/auth/logout') }}">Deconnexion</a></li>
 								</ul>
 							</div>

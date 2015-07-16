@@ -20,6 +20,8 @@ Route::get('demandes', 'WelcomeController@demandes');
 Route::get('annonce/{n}', 'WelcomeController@showAnnonce');
 
 Route::get('user-posts/{n}', 'UserController@showUserPosts');
+Route::get('user-profil/{n}', 'UserController@showProfil');
+Route::get('user-edit-profil/{n}', 'UserController@editProfil');
 
 
 Route::get('creer_compte', 'WelcomeController@creerCompte');
