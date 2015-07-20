@@ -31,7 +31,7 @@
 						<option>Trois riviere</option>
 						<option>Ottawa</option>
 					</select>					
-					<button type="submit" class="btn btn-success text-uppercase">Rechercher</button>
+					<button type="submit" class="btn btn-success text-uppercase">Rechercher </button>
 				</form>
 			</div>
 		</div>

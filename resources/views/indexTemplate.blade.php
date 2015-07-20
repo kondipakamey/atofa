@@ -89,7 +89,7 @@
 								<ul>
 									<li><a href="#">Qui sommes nous</a></li>
 									<li><a href="#">Condition d'utilisation</a></li>
-									<li><a href="#">Annonces à la une</a></li>
+									<li><a href="#">Annonces Ã  la une</a></li>
 									<li><a href="#">Contacts</a></li>
 								</ul>
 							</div>
@@ -129,7 +129,7 @@
 			
 		</div>
 		<div class="row" id="copy">
-			<p>Copyright &copy; 2015 Tout droit reservé</p>
+			<p>Copyright &copy; 2015 Tout droit reservÃ©</p>
 		</div>
 	</footer>
 	
