@@ -178,6 +178,17 @@ margin-top-20
 
 /*** FIN page boutique ***/
 
+/*** DEBUT page contact ***/
+
+#google_map
+{
+	
+	margin-top: 25px;
+	height: 380px;	
+}
+
+/*** FIN page contact ***/
+
 footer{
 	padding-top:10px;
 	background-color: #1C4D7C;

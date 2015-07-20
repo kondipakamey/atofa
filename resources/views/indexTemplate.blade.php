@@ -87,10 +87,10 @@
 							</div>
 							<div class="panel-body">
 								<ul>
-									<li><a href="#">Qui sommes nous</a></li>
-									<li><a href="#">Condition d'utilisation</a></li>
+									<li><a href="{{ url('/a_propos') }}">Qui sommes nous</a></li>
+									<li><a href="{{ url('/fonctionnement') }}">Fonctionnement</a></li>
 									<li><a href="#">Annonces à la une</a></li>
-									<li><a href="#">Contacts</a></li>
+									<li><a href="{{ url('/contact') }}">Contact</a></li>
 								</ul>
 							</div>
 						</div>

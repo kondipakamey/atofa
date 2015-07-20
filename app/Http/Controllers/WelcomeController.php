@@ -26,6 +26,21 @@ class WelcomeController extends Controller{
 		return view('index');
 	}
 	
+	public function aboutUs(){
+		
+		return view('a_propos');
+	}
+	
+	public function fonctionnement(){
+		
+		return view('fonctionnement');
+	}
+	
+	public function contact(){
+		
+		return view('contact');
+	}
+	
 	public function creerCompte()
     {
 		$cities = City::all();

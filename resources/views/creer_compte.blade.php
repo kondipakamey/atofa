@@ -1,4 +1,4 @@
-@extends('templateStandard')
+@extends('template')
 
 @section('titre')
 	Atofa | Nouveau Compte

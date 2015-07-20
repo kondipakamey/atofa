@@ -12,6 +12,11 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+
+Route::get('a_propos', 'WelcomeController@aboutUs');
+Route::get('fonctionnement', 'WelcomeController@fonctionnement');
+Route::get('contact', 'WelcomeController@contact');
+
 Route::get('boutiques', 'WelcomeController@boutiques');
 Route::get('boutique/{n}', 'WelcomeController@showBoutique');
 

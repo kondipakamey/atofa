@@ -56,7 +56,8 @@
 						<div class="row">
 							<div class="jumbotron">
 							<h1 class="text-center">Bienvenue sur Atofa !!!</h1>
-							<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+							<p class="text-center">ATOFA est un portail web conçue sur une idée selon laquelle les bonnes occasions se trouvent aux quatres coins de votre ville, voire près de chez vous, dans votre quartier. </p>
+
 						</div>
 						</div>
 					</div>
@@ -209,16 +210,16 @@
 		<div class="row">
 			<div class="jumbotron">
 				<h1 class="text-center">Qui sommes nous</h1>
-				<p>Sed dictum id neque sed feugiat. Curabitur ac malesuada eros. 
-					Phasellus a turpis eu nisi varius pellentesque vitae sed ex. 
-					Curabitur a ligula sit amet ligula aliquet ullamcorper sed quis orci. 
-					Quisque finibus aliquam tellus, 
-					eget fringilla turpis pulvinar sit amet. Integer eu neque augue. </p>
+				<p class="text-center">Nous sommes un portail web regroupant un ensemble de boutiques ou espaces membres qui proposent différentes sortes d’annonces sous forme d’offres et de demandes.</p>
+				<a href="{{ url('creer_compte') }}">
 				<div class="btn-group btn-group-justified" role="group" aria-label="...">
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary btn-lg text-uppercase"><strong>creez votre propre boutique</strong></button>
-					</div>
-				</div>							
+					
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary btn-lg text-uppercase"><strong>creez votre propre boutique</strong></button>
+						</div>
+					
+				</div>	
+				</a>
 			</div>
 		</div>
 	</div>
