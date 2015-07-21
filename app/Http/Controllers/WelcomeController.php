@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\City;
+use App\Post;
 use App\Http\Requests\UserCreateRequest;
 use App\Gestion\PhotoGestion;
 use App\Repositories\UserRepository;
@@ -22,8 +23,8 @@ class WelcomeController extends Controller{
     }
 	
 	public function index(){
-		
-		return view('index');
+		$annonces = Post::take(6)->get();
+		return view('index', compact('annonces'));
 	}
 	
 	public function aboutUs(){
@@ -100,6 +101,15 @@ class WelcomeController extends Controller{
 		
 		//$boutiques = User::all();
 		return view('offres', compact('offres', 'links'));
+	}
+	
+	public function annonces(){
+		
+		$annonces = $this->postRepository->getPaginate($this->nbrPerPage);
+		$links = str_replace('/?', '?', $annonces->render());
+		
+		//$boutiques = User::all();
+		return view('annonces', compact('annonces', 'links'));
 	}
 	
 	public function demandes(){

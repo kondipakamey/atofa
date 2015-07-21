@@ -22,6 +22,7 @@ Route::get('boutique/{n}', 'WelcomeController@showBoutique');
 
 Route::get('offres', 'WelcomeController@offres');
 Route::get('demandes', 'WelcomeController@demandes');
+Route::get('annonces', 'WelcomeController@annonces');
 Route::get('annonce/{n}', 'WelcomeController@showAnnonce');
 
 Route::get('user-posts/{n}', 'UserController@showUserPosts');

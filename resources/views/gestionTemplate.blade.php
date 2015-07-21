@@ -75,14 +75,14 @@
 					<div class="col-sm-12 col-md-4">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title text-uppercase text-center"><strong>Information</strong></h3>
+								<h3 class="panel-title text-uppercase text-center"><strong>Informations</strong></h3>
 							</div>
 							<div class="panel-body">
 								<ul>
-									<li><a href="#">Qui sommes nous</a></li>
-									<li><a href="#">Condition d'utilisation</a></li>
-									<li><a href="#">Annonces à la une</a></li>
-									<li><a href="#">Contacts</a></li>
+									<li><a href="{{ url('/a_propos') }}">Qui sommes nous</a></li>
+									<li><a href="{{ url('/fonctionnement') }}">Fonctionnement</a></li>
+									<li><a href="{{ url('/annonces') }}">Voir toutes les annonces</a></li>
+									<li><a href="{{ url('/contact') }}">Nous Contacter</a></li>
 								</ul>
 							</div>
 						</div>
@@ -97,7 +97,7 @@
 									<li><a href="{{ url('/') }}">Acceuil</a></li>
 									<li><a href="{{ url('/offres') }}">Acheter</a></li>
 									<li><a href="{{ url('/demandes') }}">Vendre</a></li>
-									<li><a href="{{ url('/boutiques') }}">Boutique</a></li>
+									<li><a href="{{ url('/boutiques') }}">Boutiques</a></li>
 								</ul>
 							</div>
 						</div>

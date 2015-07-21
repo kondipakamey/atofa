@@ -72,11 +72,16 @@
 @stop
 
 @section('contenu')
+	
+
+		
+	
 	<div class="container">
 		<section class="row trait-horizontal">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="row">
 					<h2 class="text-uppercase text-center">Visiter les offres, demandes ou boutiques</h2>
+					<?php var_dump($annonces[0]->titre) ?>
 				</div>
 				<div class="row" id="offre-demande-visite">					
 					<div class="col-sm-4">
@@ -113,11 +118,13 @@
 									  <div class="caption">
 										<h3 class="text-center"><strong>Appareil Photo</strong></h3>
 										<p class="text-center"><strong>200$</strong></p>
-										<div class="btn-group btn-group-justified" role="group" aria-label="...">
-											<div class="btn-group">
-												<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+										
+											<div class="btn-group btn-group-justified" role="group" aria-label="...">
+												<div class="btn-group">
+													<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+												</div>
 											</div>
-										</div>
+								
 									  </div>
 									</div>
 								</div>
