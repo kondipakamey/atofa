@@ -1,11 +1,11 @@
 @extends('template')
 
 @section('titre')
-	Atofa | Offres
+	Atofa | Boutique annonces
 @stop
 
 @section('bas_menu')
-		<div class="row well">
+<div class="row well">
 			<div class="col-md-8 col-md-offset-2">
 				<form class="form-inline">
 					<div class="form-group">
@@ -44,31 +44,31 @@
 		<div class="row">
 		
 			<div class="col-md-9" id="annonces">
-				@foreach($offres as $offre)
-					@if($offre->type == "Offre")
+				@foreach($posts as $post)
+					
 						<div class="list-group">
-							<a href="{{ url('/annonce/')}}/{{$offre->id}}" class="list-group-item">
+							<a href="{{ url('/annonce/')}}/{{$post->id}}" class="list-group-item">
 								<div class="row">
 									<div class="col-md-4">
-										<img src="{{ asset(config('images.path').'/'.$offre->photo) }}" alt="..." class="img-thumbnail">
+										<img src="{{ asset(config('images.path').'/'.$post->photo) }}" alt="..." class="img-thumbnail">
 									</div>
 									<div class="col-md-8 bg-primary" id="annonce-info">
-										<h4><strong>{{$offre->titre}} </strong>
+										<h4><strong>{{$post->titre}} </strong>
 											<em class="pull-right">
-												<span class="glyphicon glyphicon-pencil"></span> {{ $offre->user->name }} le {!! $offre->created_at->format('d-m-Y') !!}
+												<span class="glyphicon glyphicon-pencil"></span> {{ $post->user->name }} le {!! $post->created_at->format('d-m-Y') !!}
 											</em>
 										</h4>
-										<p>Categorie : <strong>{{$offre->category->name}} </strong>/ Ville : <strong>{{$offre->city->city}} {{$offre->city->state}}</strong></p>
+										<p>Categorie : <strong>{{$post->category->name}} </strong>/ Ville : <strong>{{$post->city->city}} {{$post->city->state}}</strong></p>
 										
-										<p>Etat : <strong>{{$offre->etat}}</strong></p>
-										<h3><strong>{{$offre->prix}}$</strong></h3>
+										<p>Etat : <strong>{{$post->etat}}</strong></p>
+										<h3><strong>{{$post->prix}}$</strong></h3>
 										
 										
 									</div>
 								</div>
 							</a>
 						</div>
-					@endif
+					
 				@endforeach
 				{!! $links !!}
 			</div>

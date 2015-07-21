@@ -39,12 +39,10 @@ class UserController extends Controller
 		return view('manager.users.index', compact('users', 'links'));
     }
 	
-	public function showUserPosts($user_id)
+	public function showBoutiquePosts($user_id)
 	{
-		
 		$user = $this->userRepository->getById($user_id);
-		//$posts = $user->posts;
-		//$links = str_replace('/?', '?', $users->render());
+		
 		$posts = Post::where('user_id', '=', $user_id)->paginate($this->nbrPerPage);
 		$links = str_replace('/?', '?', $posts->render());
 		return view('manager.users.userPostList', compact('posts', 'user', 'links'));

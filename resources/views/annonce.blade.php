@@ -82,6 +82,13 @@
 					</div>
 				</div>	
 				
+				<a href="{{ url('/boutique/')}}/{{$post->user->id}}" class="list-group-item" >
+					<div class="btn-group btn-group-justified" role="group" aria-label="...">
+						<div class="btn-group">
+							<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>Visiter la boutique</strong></button>
+						</div>
+					</div>
+				</a>
 				
 			
 			</div>

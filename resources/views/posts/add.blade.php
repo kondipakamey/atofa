@@ -70,7 +70,7 @@
 							<div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!}">
 								<label for="titre" class="col-sm-4 control-label">Titre de l'annonce : </label>
 								<div class="col-sm-8">
-									{!! Form::text('titre', null, ['class' => 'form-control', 'placeholder' => 'Titre de l\'annonce']) !!}
+									{!! Form::text('titre', null, ['class' => 'form-control', 'placeholder' => 'Titre de l\'annonce en deux mots']) !!}
 									{!! $errors->first('titre', '<small class="help-block">:message</small>') !!}
 								</div>
 								

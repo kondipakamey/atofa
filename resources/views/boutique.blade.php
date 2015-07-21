@@ -49,6 +49,9 @@
 		<div class="row container">
 			<div class="col-md-7">
 				<img src="{{ asset(config('images.path').'/'.$user->shopPicture) }}" alt="..." class="img-thumbnail boutique-img">
+				<a href="{{ url('boutique_annonces')}}/{{$user->id}}" class="btn btn-success btn-block btn-lg" id="margin-top-20">
+					<strong class="text-uppercase">Consulter ses annonces</strong>
+				</a>
 			</div>
 			<div class="col-md-5">
 				<div class="panel panel-primary">	

@@ -5,11 +5,7 @@
 		<div class="row alert alert-info">{{ $info }}</div>
 	@endif
 	
-	<!--php
-	$user_id = Auth::user()->id;
-
-	$posts = App\User::find($user_id)->posts;
-	-->
+	
 	<div class="well">
 		<h1 class="text-center">Liste des annonces de la boutique <strong class="text-primary text-uppercase">{{ $user->shopName }}</strong></h1>
 	</div>
@@ -34,7 +30,7 @@
 			</div>
 			<div class="col-md-2" id="margin-top-bottom-10">
 				<p>{!! link_to_route('post.show', 'Voir', [$post->id], ['class' => 'btn btn-success btn-block']) !!}</p>
-				
+				<p>{!! link_to_route('post.edit', 'Modifier', [$post->id], ['class' => 'btn btn-warning btn-block']) !!}</p>
 				<p>
 					{!! Form::open(['method' => 'DELETE', 'route' => ['post.destroy', $post->id]]) !!}
 						{!! Form::submit('Supprimer cet article', ['class' => 'btn btn-danger btn-block ', 'onclick' => 'return confirm(\'Vraiment supprimer cet article ?\')']) !!}

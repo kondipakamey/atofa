@@ -128,6 +128,16 @@ class WelcomeController extends Controller{
 		return view('boutique',  compact('user'));
     }
 	
+	public function showBoutiquePosts($user_id)
+	{
+		
+		$user = $this->userRepository->getById($user_id);
+		
+		$posts = Post::where('user_id', '=', $user_id)->paginate(4);
+		$links = str_replace('/?', '?', $posts->render());
+		return view('boutiquePosts', compact('posts', 'user', 'links'));
+	}
+	
 	public function showAnnonce($id)
     {
         $post = $this->postRepository->getById($id);

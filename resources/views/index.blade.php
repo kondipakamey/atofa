@@ -56,7 +56,8 @@
 						<div class="row">
 							<div class="jumbotron">
 							<h1 class="text-center">Bienvenue sur Atofa !!!</h1>
-							<p class="text-center">ATOFA est un portail web conçue sur une idée selon laquelle les bonnes occasions se trouvent aux quatres coins de votre ville, voire près de chez vous, dans votre quartier. </p>
+							<p class="text-center">ATOFA est un portail web regroupant un ensemble de boutiques 
+								qui proposent différentes sortes d’annonces. </p>
 
 						</div>
 						</div>
@@ -72,16 +73,12 @@
 @stop
 
 @section('contenu')
-	
-
-		
-	
 	<div class="container">
 		<section class="row trait-horizontal">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="row">
 					<h2 class="text-uppercase text-center">Visiter les offres, demandes ou boutiques</h2>
-					<?php var_dump($annonces[0]->titre) ?>
+					
 				</div>
 				<div class="row" id="offre-demande-visite">					
 					<div class="col-sm-4">
@@ -114,45 +111,49 @@
 							<div class="item active">
 								<div class="col-sm-6 col-md-4">
 									<div class="thumbnail">
-									  <img src="assets/img/articles/article1.jpg" alt="..." >
+									  <img src="{{ asset(config('images.path').'/'.$annonces[0]->photo) }}" >
 									  <div class="caption">
-										<h3 class="text-center"><strong>Appareil Photo</strong></h3>
-										<p class="text-center"><strong>200$</strong></p>
-										
+										<h4 class="text-center"><strong>{{$annonces[0]->titre}}</strong></h4>
+										<p class="text-center"><strong>{{$annonces[0]->prix}}$</strong></p>
+										<a href="{{ url('/annonce/')}}/{{$annonces[0]->id}}" >
 											<div class="btn-group btn-group-justified" role="group" aria-label="...">
 												<div class="btn-group">
 													<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
 												</div>
 											</div>
-								
+										</a>
 									  </div>
 									</div>
 								</div>
 								<div class="col-sm-6 col-md-4">
 									<div class="thumbnail">
-										<img src="assets/img/articles/article2.jpg" alt="...">
-										<div class="caption">
-											<h3 class="text-center"><strong>Ordinateur</strong></h3>
-											<p class="text-center"><strong>129$</strong></p>
+									  <img src="{{ asset(config('images.path').'/'.$annonces[1]->photo) }}" >
+									  <div class="caption">
+										<h4 class="text-center"><strong>{{$annonces[1]->titre}}</strong></h4>
+										<p class="text-center"><strong>{{$annonces[1]->prix}}$</strong></p>
+										<a href="{{ url('/annonce/')}}/{{$annonces[1]->id}}" >
 											<div class="btn-group btn-group-justified" role="group" aria-label="...">
 												<div class="btn-group">
 													<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
 												</div>
 											</div>
-										</div>
+										</a>
+									  </div>
 									</div>
 								</div>
 								<div class="col-sm-6 col-md-4">
 									<div class="thumbnail">
-									  <img src="assets/img/articles/article3.jpg" alt="...">
+									  <img src="{{ asset(config('images.path').'/'.$annonces[2]->photo) }}" >
 									  <div class="caption">
-										<h3 class="text-center"><strong>Tablette</strong></h3>
-										<p class="text-center"><strong>99$</strong></p>
-										<div class="btn-group btn-group-justified" role="group" aria-label="...">
-											<div class="btn-group">
-												<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+										<h4 class="text-center"><strong>{{$annonces[2]->titre}}</strong></h4>
+										<p class="text-center"><strong>{{$annonces[2]->prix}}$</strong></p>
+										<a href="{{ url('/annonce/')}}/{{$annonces[2]->id}}" >
+											<div class="btn-group btn-group-justified" role="group" aria-label="...">
+												<div class="btn-group">
+													<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+												</div>
 											</div>
-										</div>
+										</a>
 									  </div>
 									</div>
 								</div>
@@ -160,42 +161,50 @@
 							<div class="item">
 								<div class="col-sm-6 col-md-4">
 									<div class="thumbnail">
-									  <img src="assets/img/articles/article1.jpg" alt="..." >
+									  <img src="{{ asset(config('images.path').'/'.$annonces[3]->photo) }}" >
 									  <div class="caption">
-										<h3 class="text-center"><strong>Appareil Photo</strong></h3>
-										<p class="text-center"><strong>200$</strong></p>
-										<div class="btn-group btn-group-justified" role="group" aria-label="...">
-											<div class="btn-group">
-												<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+										<h4 class="text-center"><strong>{{$annonces[3]->titre}}</strong></h4>
+										<p class="text-center"><strong>{{$annonces[3]->prix}}$</strong></p>
+										<a href="{{ url('/annonce/')}}/{{$annonces[3]->id}}" >
+											<div class="btn-group btn-group-justified" role="group" aria-label="...">
+												<div class="btn-group">
+													<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+												</div>
 											</div>
-										</div>
+										</a>
 									  </div>
 									</div>
 								</div>
 								<div class="col-sm-6 col-md-4">
 									<div class="thumbnail">
-										<img src="assets/img/articles/article2.jpg" alt="...">
-										<div class="caption">
-											<h3 class="text-center"><strong>Ordinateur</strong></h3>
-											<p class="text-center"><strong>129$</strong></p>
+									  <img src="{{ asset(config('images.path').'/'.$annonces[4]->photo) }}" >
+									  <div class="caption">
+										<h4 class="text-center"><strong>{{$annonces[4]->titre}}</strong></h4>
+										<p class="text-center"><strong>{{$annonces[4]->prix}}$</strong></p>
+										<a href="{{ url('/annonce/')}}/{{$annonces[4]->id}}" >
 											<div class="btn-group btn-group-justified" role="group" aria-label="...">
 												<div class="btn-group">
 													<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
 												</div>
-											</div>										</div>
+											</div>
+										</a>
+									  </div>
 									</div>
 								</div>
 								<div class="col-sm-6 col-md-4">
 									<div class="thumbnail">
-									  <img src="assets/img/articles/article3.jpg" alt="...">
+									  <img src="{{ asset(config('images.path').'/'.$annonces[5]->photo) }}" >
 									  <div class="caption">
-										<h3 class="text-center"><strong>Tablette</strong></h3>
-										<p class="text-center"><strong>99$</strong></p>
-										<div class="btn-group btn-group-justified" role="group" aria-label="...">
-											<div class="btn-group">
-												<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+										<h4 class="text-center"><strong>{{$annonces[5]->titre}}</strong></h4>
+										<p class="text-center"><strong>{{$annonces[5]->prix}}$</strong></p>
+										<a href="{{ url('/annonce/')}}/{{$annonces[5]->id}}" >
+											<div class="btn-group btn-group-justified" role="group" aria-label="...">
+												<div class="btn-group">
+													<button type="button" class="btn btn-success btn-lg text-uppercase"><strong>regarder l'annonce</strong></button>
+												</div>
 											</div>
-										</div>									  </div>
+										</a>
+									  </div>
 									</div>
 								</div>
 							</div>
@@ -217,7 +226,8 @@
 		<div class="row">
 			<div class="jumbotron">
 				<h1 class="text-center">Qui sommes nous</h1>
-				<p class="text-center">Nous sommes un portail web regroupant un ensemble de boutiques ou espaces membres qui proposent différentes sortes d’annonces sous forme d’offres et de demandes.</p>
+				<p class="text-center">Nous sommes un portail web conçue sur une idée selon laquelle les bonnes occasions se trouvent aux quatres coins de votre ville, voire près de chez vous, dans votre quartier.
+				</p>
 				<a href="{{ url('creer_compte') }}">
 				<div class="btn-group btn-group-justified" role="group" aria-label="...">
 					

@@ -18,6 +18,7 @@ Route::get('fonctionnement', 'WelcomeController@fonctionnement');
 Route::get('contact', 'WelcomeController@contact');
 
 Route::get('boutiques', 'WelcomeController@boutiques');
+Route::get('boutique_annonces/{n}', 'WelcomeController@showBoutiquePosts');
 Route::get('boutique/{n}', 'WelcomeController@showBoutique');
 
 Route::get('offres', 'WelcomeController@offres');
