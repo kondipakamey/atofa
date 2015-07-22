@@ -135,7 +135,7 @@ class WelcomeController extends Controller{
 		
 		$posts = Post::where('user_id', '=', $user_id)->paginate(4);
 		$links = str_replace('/?', '?', $posts->render());
-		return view('boutiquePosts', compact('posts', 'user', 'links'));
+		return view('boutiquePosts', compact('posts','links'));
 	}
 	
 	public function showAnnonce($id)

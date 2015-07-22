@@ -1,11 +1,11 @@
 @extends('template')
 
 @section('titre')
-	Atofa | Boutique annonces
+	Atofa | Annonces de la boutique
 @stop
 
 @section('bas_menu')
-<div class="row well">
+		<div class="row well">
 			<div class="col-md-8 col-md-offset-2">
 				<form class="form-inline">
 					<div class="form-group">
@@ -40,10 +40,16 @@
 
 
 @section('contenu')
+
 	<div class="container">
+		<div class="jumbotron">
+			<h2 class="text-center text-info">Bienvenue dans la boutique : <strong class="text-primary">{{ $posts[0]->user->shopName }} </strong></h2>
+			<p class="text-center">{{ $posts[0]->user->shopDescription }}</p>
+		</div>
 		<div class="row">
 		
 			<div class="col-md-9" id="annonces">
+			
 				@foreach($posts as $post)
 					
 						<div class="list-group">
@@ -75,13 +81,14 @@
 			
 			<div class="col-md-3" id="pubs">
 				<div class="row">
-					<img src="assets/img/pubs/pub2.png" alt="..." class="img-thumbnail">
+					
+					<img src="http://atofa/public/assets/img/pubs/pub2.png" alt="..." class="img-thumbnail">
 				</div>
 				<div class="row">
-					<img src="assets/img/pubs/pub3.jpg" alt="..." class="img-thumbnail">
+					<img src="http://atofa/public/assets/img/pubs/pub3.jpg" alt="..." class="img-thumbnail">
 				</div>
 				<div class="row">
-					<img src="assets/img/pubs/pub.png" alt="..." class="img-thumbnail">
+					<img src="http://atofa/public/assets/img/pubs/pub.png" alt="..." class="img-thumbnail">
 				</div>
 			</div>
 		</div>
