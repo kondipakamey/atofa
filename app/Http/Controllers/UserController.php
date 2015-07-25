@@ -115,8 +115,8 @@ class UserController extends Controller
 	public function payment()
     {
 		$user = Auth::user();
-		print_r(Input::all());
-		echo '<hr/>';
+		//print_r(Input::all());
+		//echo '<hr/>';
 		
 		\Stripe\Stripe::setApiKey(\Config::get('stripe.secret_key'));
 		

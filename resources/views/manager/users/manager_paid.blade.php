@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
 		<meta charset="utf-8">
+		<link rel="icon" type="image/png" href="assets/img/atofa.png" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Atofa | Stripe Checkout</title>
@@ -81,15 +82,15 @@
 				<p class="text-center"><script
 					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 					data-key="pk_test_kSCcO66RVBmybIykiXCPusR3"
-					data-amount="2000"
+					data-amount="1000"
 					data-name="Atofa"
-					data-description="2 widgets ($20.00)"
-					data-image="/128x128.png">
+					data-description="($10.00)"
+					data-image="http://atofa/public/assets/img/stripeLogo.png">
 				</script></p>
 				
 				<input type="hidden" name="token" value="{{ csrf_token() }}"/>
 
-				<input type="hidden" name="amount" value="2000"/>
+				<input type="hidden" name="amount" value="1000"/>
 				
 			{!! Form::close() !!}
 		@endif

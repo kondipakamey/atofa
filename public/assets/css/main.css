@@ -189,6 +189,13 @@ margin-top-20
 
 /*** FIN page contact ***/
 
+
+#min_height_100
+{
+	min-height: 400px;
+}
+
+
 footer{
 	padding-top:10px;
 	background-color: #1C4D7C;

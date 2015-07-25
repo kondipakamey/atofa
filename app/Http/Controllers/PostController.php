@@ -6,6 +6,7 @@ use App\Gestion\PhotoGestion;
 use App\Repositories\PostRepository;
 use App\Http\Requests\PostRequest;
 use App\City;
+use App\Post;
 use App\Category;
 
 
@@ -28,8 +29,10 @@ class PostController extends Controller
 	public function index()
 	{
 		
-		$posts = $this->postRepository->getPaginate($this->nbrPerPage);
-		$links = str_replace('/?', '?', $posts->render());
+		//$posts = $this->postRepository->getPaginate($this->nbrPerPage);
+		//$links = str_replace('/?', '?', $posts->render());
+		
+		
 		
 		//$user = Auth::user();
 		//var_dump($user);
@@ -38,10 +41,15 @@ class PostController extends Controller
 		}
 		
 		if(Auth::check() and Auth::user()->paid){
+			$user = Auth::user();
+			$posts = Post::where('user_id', '=', $user->id)->paginate(4);
+			$links = str_replace('/?', '?', $posts->render());
 			return view('posts.liste', compact('posts', 'links'));
+		}else{
+			return view('manager.users.manager_paid');
 		}
+		return view('index');
 		
-		return view('manager.users.manager_paid');
 	}
 	
 	public function showPostList($user)

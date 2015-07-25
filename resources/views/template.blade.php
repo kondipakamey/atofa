@@ -2,6 +2,7 @@
 <html lang="fr">
   <head>
 	<meta charset="utf-8"/>
+	<link rel="icon" type="image/png" href="assets/img/atofa.png" />
     <title>@yield('titre')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,10 +68,10 @@
 							
 							@if(Auth::guest())
 								<li><a href="{{ url('/auth/login') }}" class="text-uppercase text-warning bg-primary"><strong>Connexion</strong></a></li>
-								<li><a href="{{ url('creer_compte') }}" class="text-uppercase text-primary bg-success"><strong>Creer compte</strong></a></li>
+								<li><a href="{{ url('creer_compte') }}" class="text-uppercase text-primary bg-success"><strong>Créer compte</strong></a></li>
 							@else
 								<li><a href="{{ url('/post') }}" class="text-uppercase text-warning bg-primary"><strong>Mon Portail</strong></a></li>
-								<li><a href="{{ url('/auth/logout') }}" class="text-uppercase text-danger bg-danger"><strong>Se Deconnecter</strong></a></li>
+								<li><a href="{{ url('/auth/logout') }}" class="text-uppercase text-danger bg-danger"><strong>Se Déconnecter</strong></a></li>
 							@endif
 						</ul>
 					</div>
