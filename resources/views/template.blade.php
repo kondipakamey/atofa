@@ -136,7 +136,7 @@
 			
 		</div>
 		<div class="row" id="copy">
-			<p>Copyright &copy; 2015 Tout droit reservé</p>
+			<p>Copyright &copy; 2015 Tout droit reservÃ©</p>
 		</div>
 	</footer>
 	

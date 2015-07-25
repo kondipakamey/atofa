@@ -69,7 +69,7 @@ class WelcomeController extends Controller{
 			
 			$user = $this->userRepository->store($input);
 			$user['shopPicture'] = $photoGestion->getPictureLink();
-			return redirect('auth/login')->withOk("L'utilisateur " . $user->name . " a été créé.");
+			return redirect('post')->withOk("Inscription réussie");
 			
 			
 		}

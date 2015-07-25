@@ -39,7 +39,7 @@
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 									<li><a href="{{ url('/user-profil')}}/{{Auth::user()->id}}">Mon Profil</a></li>
-									<li><a href="{{ url('/auth/logout') }}">Deconnexion</a></li>
+									<li><a href="{{ url('/auth/logout') }}">Déconnexion</a></li>
 								</ul>
 							</div>
 							<div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
@@ -47,12 +47,16 @@
 									<ul class="nav navbar-nav" id="margin-right-20">
 										<li>{!!link_to('user', 'Les Utilisateurs', ['class' => 'text-uppercase']) !!}</li>
 									</ul>
-									<a href="{{ url('user/create') }}" class="btn btn-primary navbar-btn navbar-right" >Creer utilisateur</a>
+									<a href="{{ url('user/create') }}" class="btn btn-primary navbar-btn navbar-right" >Créer utilisateur</a>
 								@else
-									<ul class="nav navbar-nav" id="margin-right-20">
-										<li>{!!link_to('post', 'Mes Articles', ['class' => 'text-uppercase']) !!}</li>
-									</ul>
-									<a href="{{ url('post/create') }}" class="btn btn-primary navbar-btn navbar-right" >Creer article</a>
+									@if(Auth::user()->paid)
+										<ul class="nav navbar-nav" id="margin-right-20">
+											<li>{!!link_to('post', 'Mes Articles', ['class' => 'text-uppercase']) !!}</li>
+										</ul>
+										<a href="{{ url('post/create') }}" class="btn btn-primary navbar-btn navbar-right" >Créer article</a>
+									@else	
+										<a href="{{ url('paid') }}" class="btn btn-primary navbar-btn navbar-right" >Effectuer un payement</a>
+									@endif
 								@endif	
 
 							</div>

@@ -26,6 +26,8 @@ Route::get('demandes', 'WelcomeController@demandes');
 Route::get('annonces', 'WelcomeController@annonces');
 Route::get('annonce/{n}', 'WelcomeController@showAnnonce');
 
+Route::get('paid', 'UserController@paid');
+Route::post('checkout', 'UserController@payment');
 Route::get('user-posts/{n}', 'UserController@showUserPosts');
 Route::get('user-profil/{n}', 'UserController@showProfil');
 Route::get('user-edit-profil/{n}', 'UserController@editProfil');

@@ -48,7 +48,7 @@
 								
 									<a href="{{ url('/auth/login') }}" class="btn btn-primary navbar-btn navbar-right">Se connecter</a>
 									
-									<a href="{{ url('creer_compte') }}" class="btn btn-warning navbar-btn navbar-right">Creer une boutique</a>
+									<a href="{{ url('creer_compte') }}" class="btn btn-warning navbar-btn navbar-right">Créer une boutique</a>
 								@else
 									
 									<div class="dropdown navbar-btn navbar-right">
@@ -58,7 +58,7 @@
 									  </button>
 									  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 										<li><a href="{{ url('/profil') }}">Mon Profil</a></li>
-										<li><a href="{{ url('/auth/logout') }}">Deconnexion</a></li>
+										<li><a href="{{ url('/auth/logout') }}">Déconnexion</a></li>
 										
 									  </ul>
 									</div>

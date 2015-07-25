@@ -11,7 +11,7 @@
 	$posts = App\User::find($user_id)->posts;
 	-->
 	<div class="well">
-		<h1 class="text-center">Binvenue sur la page de gestion des annonces</h1>
+		<h1 class="text-center">Bienvenue sur la page de gestion des annonces</h1>
 	</div>
 	
 	@foreach($posts as $post)

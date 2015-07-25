@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
 			$table->text('shopDescription');
 			$table->string('shopPicture', 60);
 			$table->integer('city_id')->unsigned();
+			
 			$table->foreign('city_id')
 				  ->references('id')
 				  ->on('cities')

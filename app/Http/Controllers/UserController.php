@@ -107,6 +107,45 @@ class UserController extends Controller
 		return view('manager.users.show',  compact('user', 'city'));
     }
 	
+	public function paid()
+    {
+		return view('manager.users.manager_paid');
+    }
+	
+	public function payment()
+    {
+		$user = Auth::user();
+		print_r(Input::all());
+		echo '<hr/>';
+		
+		\Stripe\Stripe::setApiKey(\Config::get('stripe.secret_key'));
+		
+		$token = Input::get('stripeToken');
+		$amount = Input::get('amount');
+		
+		try{
+			$charge = \Stripe\Charge::create(array(
+				"amount" => $amount,
+				"currency" => "cad",
+				"card" => $token,
+				"description" => $user->email)
+			);	
+		} catch(Strip_CardError $e){
+			dd($e);
+		}
+		
+		$this->updateUserPaid($user, $charge['id']);
+		return view('manager.users.showProfil',  compact('user'));
+    }
+	
+	public function updateUserPaid($user, $paid_id)
+    {
+		//var_dump($user);
+		$user['paid'] = 1;
+		$user['paid_id'] = $paid_id;
+		
+		$user->save();
+	}
 	
 	public function showProfil($id)
     {

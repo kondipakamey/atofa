@@ -37,8 +37,11 @@ class PostController extends Controller
 			return redirect(route('user.index'));
 		}
 		
+		if(Auth::check() and Auth::user()->paid){
+			return view('posts.liste', compact('posts', 'links'));
+		}
 		
-		return view('posts.liste', compact('posts', 'links'));
+		return view('manager.users.manager_paid');
 	}
 	
 	public function showPostList($user)
